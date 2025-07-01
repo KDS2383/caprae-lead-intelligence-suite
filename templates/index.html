@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caprae Lead Intelligence Suite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Section 1: Lead Scoring (Your existing feature) -->
+        <header>
+            <h1>1. Lead Scoring & Prioritization</h1>
+            <p>Find and rank new high-value leads by industry and location.</p>
+        </header>
+        <form id="search-form">
+            <input type="text" id="industry" placeholder="Enter Industry (e.g., SaaS)" required>
+            <input type="text" id="location" placeholder="Enter Location (e.g., Chicago)" required>
+            <button type="submit">Find & Score Leads</button>
+        </form>
+
+        <!-- Section 2: Signal Monitoring (The NEW feature) -->
+        <header style="margin-top: 60px; border-top: 1px solid var(--border-color); padding-top: 40px;">
+            <h1>2. Growth Signal Monitoring</h1>
+            <p>Check top-ranked companies for active hiring signals (e.g., job postings).</p>
+        </header>
+        <form id="signal-form">
+            <input type="text" id="job-title" placeholder="Enter Trigger Job Title (e.g., VP of Sales)" required>
+            <textarea id="company-urls" placeholder="Enter company URLs, one per line..." rows="5" required></textarea>
+            <button type="submit">Check for Signals</button>
+        </form>
+
+        <!-- Common Loader and Results Table -->
+        <div class="loader-container" id="loader" style="display: none;">
+            <div class="loader"></div>
+            <p id="loader-text">Analyzing and scoring leads...</p>
+        </div>
+        <div class="results-container" id="results-area" style="display: none;">
+            <h2 id="results-title"></h2>
+            <table id="results-table">
+                <thead id="results-head">
+                    <!-- Header will be injected by JS -->
+                </thead>
+                <tbody id="results-body">
+                    <!-- Results will be injected here by JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

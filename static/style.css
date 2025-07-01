@@ -1,0 +1,188 @@
+/* --- START OF FILE style.css --- */
+
+:root {
+    --bg-dark: #1a1c23;
+    --bg-light: #2a2d35;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --accent: #4a90e2;
+    --accent-hover: #5aa1f2;
+    --border-color: #3a3d45;
+    --success: #2ecc71; /* Added for 'Yes' signal */
+    --danger: #e74c3c; /* Added for 'No' signal */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 1.1em;
+}
+
+/* --- GENERALIZED FORM STYLES --- */
+#search-form, #signal-form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+#signal-form {
+    flex-direction: column;
+}
+
+#search-form input, #signal-form input, #signal-form textarea {
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 1em;
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+}
+
+#search-form input {
+    flex-grow: 1;
+}
+
+#signal-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+#search-form input::placeholder, 
+#signal-form input::placeholder, 
+#signal-form textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+#search-form button, #signal-form button {
+    background-color: var(--accent);
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+#search-form button:hover, #signal-form button:hover {
+    background-color: var(--accent-hover);
+}
+
+
+/* --- LOADER STYLES --- */
+.loader-container {
+    text-align: center;
+    padding: 40px;
+}
+
+.loader {
+    border: 4px solid var(--bg-light);
+    border-top: 4px solid var(--accent);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px auto;
+}
+
+.loader-container p {
+    color: var(--text-secondary);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* --- TABLE STYLES --- */
+.results-container {
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+#results-area h2 {
+    padding: 15px 15px 0 15px;
+    margin: 0;
+}
+
+#results-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Use fixed layout for consistent column widths */
+}
+
+#results-table th, #results-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    word-wrap: break-word; /* Helps prevent long URLs from breaking layout */
+}
+
+#results-table th {
+    background-color: #333640;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+#results-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+#results-table tbody tr:hover {
+    background-color: #333640;
+}
+
+#results-table .score { font-weight: 700; color: var(--accent); }
+#results-table .signal-yes { font-weight: 700; color: var(--success); }
+#results-table .signal-no { font-weight: 700; color: var(--danger); }
+
+/* Column width definitions for signal results table */
+#results-table .th-url { width: 75%; }
+#results-table .th-signal { width: 25%; }
+
+/* --- HELPER BUTTON --- */
+#use-results-btn {
+    display: none; /* Hidden by default */
+    margin: -25px 0 25px auto; /* Position it nicely */
+    background: none;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+#use-results-btn:hover {
+    background-color: var(--accent);
+    color: white;
+}

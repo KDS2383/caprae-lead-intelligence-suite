@@ -1,0 +1,8 @@
+beautifulsoup4
+Flask
+google-api-python-client
+gunicorn
+numpy
+requests
+scikit-learn
+xgboost
