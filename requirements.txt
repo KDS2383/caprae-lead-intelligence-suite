@@ -3,6 +3,9 @@ Flask
 google-api-python-client
 gunicorn
 numpy
+pandas
 requests
 scikit-learn
+selenium
+webdriver-manager
 xgboost
