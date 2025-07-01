@@ -13,9 +13,7 @@ This dual-pronged solution directly addresses the core challenge of moving beyon
 
 ### Live Demo
 
-[](https://your-live-app-url.com)
-
-*(**Action Item:** Create a GIF showing both the lead scoring and signal monitoring features. Upload it to [Imgur](https://imgur.com/upload) and replace the `YOUR_GIF_ID.gif` part of the URL.)*
+https://caprae-lead-intelligence-suite.onrender.com/
 
 ---
 
